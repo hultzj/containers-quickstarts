@@ -18,7 +18,7 @@ RUN INSTALL_PKGS="rh-python36-python-pip" && \
     yum $DISABLE_REPOS install -y $INSTALL_PKGS && \
     source scl_source enable rh-python36 && \
     scl enable rh-python36 bash && \
-    python3 -m pip install --upgrade --user openshift \
+    pip install --upgrade --user openshift \
     python3 -m pip install ansible==$ANSIBLE_VERSION paramiko molecule && \
     yum $DISABLE_REPOS clean all -y && \
     rm -rf /var/cache/yum
