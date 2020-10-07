@@ -20,6 +20,7 @@ RUN INSTALL_PKGS="rh-python36-python-pip" && \
     scl enable rh-python36 bash && \
     python3 -m pip install ansible==$ANSIBLE_VERSION paramiko molecule && \
     yum $DISABLE_REPOS clean all -y && \
+    ansible-galaxy collection install community.kubernetes && \
     rm -rf /var/cache/yum
 
 ADD scl_enable /usr/share/container-scripts/
